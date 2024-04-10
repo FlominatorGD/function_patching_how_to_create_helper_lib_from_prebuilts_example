@@ -29,4 +29,4 @@ After the patch, running the app (executable) again, will show that the function
 ```bash
 ./build/bin/app
 ```
-Now libb is our helper lib! This can be done vice versa.
+Now libb-impl.so is our helper lib! Implementing bxxx function formaly from libab-impl.so. This can be done vice versa.
