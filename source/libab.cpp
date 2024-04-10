@@ -1,4 +1,4 @@
-// liba.cpp
+// libab.cpp
 #include "include/libab.h"
 #include <iostream>
 
