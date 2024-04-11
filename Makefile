@@ -19,11 +19,6 @@ SOURCES_LIBA = $(SRC_DIR)/libab.cpp
 SOURCES_LIBB = $(SRC_DIR)/libb.cpp
 SOURCES_EXEC = $(SRC_DIR)/main.cpp
 
-# Object files
-OBJECTS_LIBA = $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SOURCES_LIBA:.cpp=.o))
-OBJECTS_LIBB = $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SOURCES_LIBB:.cpp=.o))
-OBJECTS_EXEC = $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SOURCES_EXEC:.cpp=.o))
-
 # Default target
 all: build_dirs copy_sources $(TARGET_LIBA) $(TARGET_LIBB) $(TARGET_EXEC)
 
@@ -35,6 +30,11 @@ build_dirs:
 copy_sources:
 	cp $(SRC_DIR)/*.cpp $(BUILD_DIR)
 	cp $(SRC_DIR)/$(INCLUDE_DIR)/*.h $(BUILD_DIR)/$(INCLUDE_DIR)
+
+# Object files
+OBJECTS_LIBA = $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SOURCES_LIBA:.cpp=.o))
+OBJECTS_LIBB = $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SOURCES_LIBB:.cpp=.o))
+OBJECTS_EXEC = $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SOURCES_EXEC:.cpp=.o))
 
 # Rule to make the library liba
 $(TARGET_LIBA): $(OBJECTS_LIBA)
